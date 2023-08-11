@@ -1,0 +1,187 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif ;
+}
+
+/*Barra de navegación*/
+header{
+    display: flex;
+    /*Esto da el estilo en dirreicción horizontal*/
+    flex-flow: row;
+    /*para que se alinie el contenido*/
+    align-items: center;
+    /*esto evita que la imagen se vea afectada por los ajustes de la margen*/
+    padding-left: 20px;
+    /*esta propiedad nos brinda espacios entre cada item*/
+    gap: 7px;
+    /*tamaño de la barra de navegación*/
+    height: 9vh;
+}
+  
+.logo{
+    /*ocupa el tamaño de la etiqueta padre*/
+    height: 40%;
+    /*cambio de tamaño por trancicion*/
+    transition: 0.3s;
+}
+
+/*estableciendo diseño al logo*/
+.logo:hover{
+    cursor: pointer;
+    height: 50%;
+}
+  
+/*diseño de las opciones del menu o barra de navegación*/
+header p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*Tamaño de letra*/
+    font-size: 13px;
+    /*borde*/
+    height: 60%;
+    border-radius: 15px;
+    /*se puede utilizar el, Whidth 35px; enve del  padding */
+    padding: 13px;
+    /*cambio de tamaño por trancicion*/
+    transition: 0.3s;
+}
+
+header p:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+  
+/*buscado*/
+header input{
+    /*Tamaño del largo*/
+    width: 71%;
+    /*diseño del contenedor a lo ancho*/
+    height: 60%;
+    border-radius: 15px;
+    border: 0px;
+    background-color: #a7a3a363;
+    /*tamaño de letra*/
+    padding-left: 30px;
+    font-size: 12px;
+    /*agruegando lupa*/
+    background-image: url(imagenes/lupa.png);/*se agruga la imagen*/
+    background-size: contain;
+    background-repeat: no-repeat; /*esto evita que la imagen se repita*/
+    background-position: 0.5px -3px; /*con esto ubicamos la imagen en el lugar deseado*/
+    
+}
+  
+/*quitando el borde el buscador o input*/
+input:focus, input[type]:focus {
+    outline: 0 none;
+}
+  
+/*iconos finales de la barra de navegacions*/
+header i{
+    padding: 11px ;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+  
+header i:hover{
+    background-color: #a7a3a363;
+    cursor: pointer;
+}
+
+/*Galeria*/
+
+main {
+    columns: 6 100px;
+    column-gap: 1.3%;
+    display: block;  
+    margin: 0 30px;
+}
+
+main > div{
+    /*es la propiedad de un elemento que establece el espacio requerido en la parte inferior de un elemento.*/
+    margin-bottom: 12%;
+    position: relative;
+}
+
+main > div > img{
+    z-index: 1;
+    /*calcular el ancho y alto total de un elemento.*/
+    box-sizing: border-box;
+    max-width: 100%;
+    border-radius: 15px;
+    /*no se recomienda utilizar margin cuando se esta utilizando flex*/
+}
+
+/*Diseño interno de cada imagen*/
+.contenido{
+    display:none;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+}
+
+main>div:hover>img {
+    opacity: 0.5;
+}
+
+main>div:hover .contenido{
+    display: flex;
+    flex-flow: column;
+}
+
+.primero {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    height: 50%;    
+    gap: 5px;
+    cursor: pointer;
+}
+
+.primero span {
+    align-items: center;
+    margin-bottom: auto;
+    color: whitesmoke;
+    padding: 8px;
+}
+
+.color{
+    background-color: red;
+    font-size: 17px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    
+}
+
+.segundo{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    right: 1px;
+    height: 43%;
+    gap: 6px;
+    margin: 10px;
+    cursor: pointer;
+    color: whitesmoke;
+}
+
+.segundo > a, i{
+    background-color: #a7a3a3;
+    color: black;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 50px;
+}
+
+/*pie de pagina*/
+footer {
+    background-color: rgb(223, 225, 139);
+    height: 10vh;
+}
